@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import cli from 'commander';
+import { Command } from 'commander';
+const cli = new Command();
 
 // Kick it off
 cli
