@@ -24,7 +24,8 @@
     "postversion": "git push --follow-tags && npm publish",
     "lint": "eslint --ext ts,js --fix src",
     "format": "prettier src/**/*.ts -w",
-    "build-live": "tsc -w && tsc-alias -w"
+    "build-live": "tsc -w && tsc-alias -w",
+    "cli": "node ./build/cli/cli.js"
   },
   "license": "MIT",
   "dependencies": {
