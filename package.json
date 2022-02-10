@@ -8,7 +8,7 @@
   "private": true,
   "version": "0.0.1",
   "engines": {
-    "node": ">=13.2.0"
+    "node": ">=16.13.1"
   },
   "main": "./build/index.js",
   "files": [
@@ -17,15 +17,15 @@
     "build/types/**/*"
   ],
   "scripts": {
-    "test": "npm run build && mocha --inspect --require source-map-support/register --bail ./build/test/",
+    "test": "npm run build && mocha --inspect --enable-source-maps --bail ./build/test/",
     "build": "rimraf build && tsc && tsc-alias",
     "preversion": "npm run lint && npm run build && npm test",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && npm run format && git add -A",
+    "version": "npm run format && git add -A",
     "postversion": "git push --follow-tags && npm publish",
     "lint": "eslint --ext ts,js --fix src",
     "format": "prettier src/**/*.ts -w",
     "build-live": "tsc -w && tsc-alias -w",
-    "cli": "node ./build/cli/cli.js"
+    "cli": "node --enable-source-maps ./build/cli/cli.js"
   },
   "license": "MIT",
   "dependencies": {
@@ -39,14 +39,12 @@
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
     "chai": "^4.3.4",
-    "conventional-changelog-cli": "^2.1.1",
     "eslint": "^8.4.0",
     "eslint-plugin-prettier": "^4.0.0",
     "fs-extra": "^10.0.0",
     "mocha": "^9.1.3",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
-    "source-map-support": "^0.5.21",
     "tsc-alias": "^1.4.2",
     "typescript": "next"
   }
