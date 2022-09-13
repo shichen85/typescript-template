@@ -3,7 +3,7 @@
   "exclude": ["node_modules"],
   "compilerOptions": {
     "target": "es2017",
-    "module": "commonjs",
+    "module": "ES2022",
     "lib": ["es2020"],
     "outDir": "./build",
     "declaration": true,

@@ -10,9 +10,8 @@
       "name": "Tests",
       "preLaunchTask": "npm: build",
       "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
-      "args": [
-        "--require",
-        "source-map-support/register",
+      "args": [        
+        "--enable-source-maps",
         "--timeout",
         "999999",
         "--colors",
